@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% import "macros.jinja2" as macros %}
+
+{% block content %}
+    {% set num_todos = todos | length %}
+    {% if num_todos > 0 %}
+        <p>You have {{num_todos}} left for today!</p>
+        <ul>
+        {{ macros.todo_list(todos) }}
+        </ul>
+    {% else %}
+    <p>You don't have any todos left for today. So relax!</p>
+    {% endif %}
+{% endblock %}
+
+</body>
+</html>

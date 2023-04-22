@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{todo}}</h1>
+{% if completed %}
+    <p class="todo todo--complete">You have completed this todo - {{todo}}</p>
+{% else %}
+    <p class="todo todo--pending">You have not completed this Yet. why not do it now?</p>
+{% endif %}
+
+<a href="{{ url_for('home') }}">home</a>
+
+{% endblock %}
